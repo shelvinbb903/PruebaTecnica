@@ -46,7 +46,7 @@ class UserController extends Controller
       $credentials->tokenjwt = $token;
       return response()->json($credentials, 200);
     }else{
-      return response()->json('Error in user or password', 401);
+      return response()->json(['error' => 'Error in user or password'], 401);
     }
   }
 
@@ -95,7 +95,6 @@ class UserController extends Controller
     if ($request->id == '' || !isset($request->id)) {
       return response()->json(["error" => "The id field is required."], 403);
     }
-    
     // Validar que los campos enviados sean correctos
     $validator = Validator::make($request->all(), [
       'first_name' => 'required|max:128',
@@ -107,9 +106,15 @@ class UserController extends Controller
     if ($validator->fails()) {
       return response()->json($validator->messages(), 401);
     }
+    $requestData = $request->all();
 
+    // Encriptar la contraseña si es enviada por el usuario
+    if(isset($request->password)){
+      $requestData['password'] = sha1($requestData['password']);
+    }
+    // Ejecutar la accion de actualizar
     User::where('id', '=', $request->id)->update(
-      $request->all()
+      $requestData
     );
     $users = User::where('id', $request->id)->first();
     return response()->json($users, 200);
