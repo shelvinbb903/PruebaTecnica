@@ -1,0 +1,323 @@
+{
+	"info": {
+		"_postman_id": "e309f37d-3870-48bf-b14b-330905b5526f",
+		"name": "PruebaQuick",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login / iniciar sesión / obtener token",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost/PruebaTecnica/public/api/login?email=admin@example.com&password=1234",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"PruebaTecnica",
+						"public",
+						"api",
+						"login"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "admin@example.com"
+						},
+						{
+							"key": "password",
+							"value": "1234"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear usuario",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3RcL1BydWViYVRlY25pY2FcL3B1YmxpY1wvYXBpXC9sb2dpbiIsImlhdCI6MTYwMzA0Mzc2NCwiZXhwIjoxNjAzMDQ3MzY0LCJuYmYiOjE2MDMwNDM3NjQsImp0aSI6ImYycEJ0ZGFkNmVVMjEwS20iLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.PAjqrvZmjZMBcoD51gV1S9LfJDZp1ef0WOYB7b6lFgw",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost/PruebaTecnica/public/api/users?first_name=John&last_name=Doe&email=user@example.com&password=SECRET&age=42&image=IMAGE",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"PruebaTecnica",
+						"public",
+						"api",
+						"users"
+					],
+					"query": [
+						{
+							"key": "first_name",
+							"value": "John"
+						},
+						{
+							"key": "last_name",
+							"value": "Doe"
+						},
+						{
+							"key": "email",
+							"value": "user@example.com"
+						},
+						{
+							"key": "password",
+							"value": "SECRET"
+						},
+						{
+							"key": "age",
+							"value": "42"
+						},
+						{
+							"key": "image",
+							"value": "IMAGE"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edición general de usuario",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3RcL1BydWViYVRlY25pY2FcL3B1YmxpY1wvYXBpXC9sb2dpbiIsImlhdCI6MTYwMzA0Mzc2NCwiZXhwIjoxNjAzMDQ3MzY0LCJuYmYiOjE2MDMwNDM3NjQsImp0aSI6ImYycEJ0ZGFkNmVVMjEwS20iLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.PAjqrvZmjZMBcoD51gV1S9LfJDZp1ef0WOYB7b6lFgw",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost/PruebaTecnica/public/api/users/2?first_name=John&last_name=Doe&email=user@example.com&password=SECRET&age=24&image=IMAGE&description=Description text",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"PruebaTecnica",
+						"public",
+						"api",
+						"users",
+						"2"
+					],
+					"query": [
+						{
+							"key": "first_name",
+							"value": "John"
+						},
+						{
+							"key": "last_name",
+							"value": "Doe"
+						},
+						{
+							"key": "email",
+							"value": "user@example.com"
+						},
+						{
+							"key": "password",
+							"value": "SECRET"
+						},
+						{
+							"key": "age",
+							"value": "24"
+						},
+						{
+							"key": "image",
+							"value": "IMAGE"
+						},
+						{
+							"key": "description",
+							"value": "Description text"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar usuarios",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3RcL1BydWViYVRlY25pY2FcL3B1YmxpY1wvYXBpXC9sb2dpbiIsImlhdCI6MTYwMzA0Mzc2NCwiZXhwIjoxNjAzMDQ3MzY0LCJuYmYiOjE2MDMwNDM3NjQsImp0aSI6ImYycEJ0ZGFkNmVVMjEwS20iLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.PAjqrvZmjZMBcoD51gV1S9LfJDZp1ef0WOYB7b6lFgw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://localhost/PruebaTecnica/public/api/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"PruebaTecnica",
+						"public",
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar usuario",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3RcL1BydWViYVRlY25pY2FcL3B1YmxpY1wvYXBpXC9sb2dpbiIsImlhdCI6MTYwMzA0Mzc2NCwiZXhwIjoxNjAzMDQ3MzY0LCJuYmYiOjE2MDMwNDM3NjQsImp0aSI6ImYycEJ0ZGFkNmVVMjEwS20iLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.PAjqrvZmjZMBcoD51gV1S9LfJDZp1ef0WOYB7b6lFgw",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost/PruebaTecnica/public/api/users/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"PruebaTecnica",
+						"public",
+						"api",
+						"users",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Borrar usuario",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3RcL1BydWViYVRlY25pY2FcL3B1YmxpY1wvYXBpXC9sb2dpbiIsImlhdCI6MTYwMzA0Mzc2NCwiZXhwIjoxNjAzMDQ3MzY0LCJuYmYiOjE2MDMwNDM3NjQsImp0aSI6ImYycEJ0ZGFkNmVVMjEwS20iLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.PAjqrvZmjZMBcoD51gV1S9LfJDZp1ef0WOYB7b6lFgw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://localhost/PruebaTecnica/public/api/users/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"PruebaTecnica",
+						"public",
+						"api",
+						"users",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edición parcial de un usuario",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3RcL1BydWViYVRlY25pY2FcL3B1YmxpY1wvYXBpXC9sb2dpbiIsImlhdCI6MTYwMjk5NDg4NCwiZXhwIjoxNjAyOTk4NDg0LCJuYmYiOjE2MDI5OTQ4ODQsImp0aSI6IkFseHcwVlJMSkRKemlPcnAiLCJzdWIiOjMsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.MsMLyYdT9xJfQCjOiYuT8qtZ1GiZ3KV_GCQlJ2vA4mg",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost/PruebaTecnica/public/api/users/3?first_name=Steven&last_name=Smith&age=26",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"PruebaTecnica",
+						"public",
+						"api",
+						"users",
+						"3"
+					],
+					"query": [
+						{
+							"key": "first_name",
+							"value": "Steven"
+						},
+						{
+							"key": "last_name",
+							"value": "Smith"
+						},
+						{
+							"key": "age",
+							"value": "26"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
