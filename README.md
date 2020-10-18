@@ -19,6 +19,6 @@ Para realizar la verificación de los puntos de la prueba tenica se deben seguir
 
 ## Notas Adicionales
 
-- Despues de ejecutar el servicio **/login** el token jwt generado se debe agregar como cabecera o header en las conexiones a los demas servicios api rest, el cual tiene como clave *Authorization* y su valor es _Bearer token_. Ejemplo: _Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3RcL1BydWViYVRlY25pY2FcL3B1YmxpY1wvYXBpXC9sb2dpbiIsImlhdCI6MTYwMzA0Mzc2NCwiZXhwIjoxNjAzMDQ3MzY0LCJuYmYiOjE2MDMwNDM3NjQsImp0aSI6ImYycEJ0ZGFkNmVVMjEwS20iLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.PAjqrvZmjZMBcoD51gV1S9LfJDZp1ef0WOYB7b6lFgw_.
+- Despues de ejecutar el servicio **/login** el token jwt generado (propiedad tokenjwt del JSON como respuesta) se debe agregar como cabecera o header en las conexiones a los demas servicios api rest, el cual tiene como clave *Authorization* y su valor es _Bearer token_. Ejemplo: _Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3RcL1BydWViYVRlY25pY2FcL3B1YmxpY1wvYXBpXC9sb2dpbiIsImlhdCI6MTYwMzA0Mzc2NCwiZXhwIjoxNjAzMDQ3MzY0LCJuYmYiOjE2MDMwNDM3NjQsImp0aSI6ImYycEJ0ZGFkNmVVMjEwS20iLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.PAjqrvZmjZMBcoD51gV1S9LfJDZp1ef0WOYB7b6lFgw_.
 
 - Las contraseñas de los usuarios estan encriptadas con el método sha1. Por lo general se usó la palabras SECRET o 1234 como contraseña. Dentro del archivo de Postman están los ejemplos con las contraseñas.
